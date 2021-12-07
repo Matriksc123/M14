@@ -1,0 +1,19 @@
+
+
+<ion-content class="no-scroll">
+<ion-list class="cont">
+  <div class="cont" *ngFor="let s of songs;let i=index;">
+    <ion-item-sliding class="cont">
+      <ion-item class="cont">
+        <ion-avatar class="cont" slot="start"> 
+          <img src="assets/images/OHM.jpg"> 
+        </ion-avatar> 
+        <ion-label class="cont">{{s.name}} <br> {{s.group}} <br> {{s.album}} <br> {{s.genre}} <br> {{s.duration}}</ion-label>
+      </ion-item>
+      <ion-item-options class="cont" side="end">
+        <button ion-button (click)="remove(i)">Remove</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </div>
+</ion-list>
+</ion-content>

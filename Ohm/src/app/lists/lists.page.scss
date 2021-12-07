@@ -1,0 +1,16 @@
+
+ion-content {
+    --ion-background-color:black;
+    --ion-text-color: white;
+    --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
