@@ -8,10 +8,11 @@
         <ion-avatar class="cont" slot="start"> 
           <img src="assets/images/OHM.jpg"> 
         </ion-avatar> 
-        <ion-label class="cont">{{s.name}} <br> {{s.group}} <br> {{s.album}} <br> {{s.genre}} <br> {{s.duration}}</ion-label>
+        <ion-label class="cont">{{s.nombre}} - {{s.grupo}} <br> {{s.album}} <br> {{s.genero}} <br> {{s.duracion}}</ion-label>
       </ion-item>
       <ion-item-options class="cont" side="end">
         <button ion-button (click)="remove(i)">Remove</button>
+        <button ion-button (click)="goMod(i)">Edit</button>
       </ion-item-options>
     </ion-item-sliding>
   </div>

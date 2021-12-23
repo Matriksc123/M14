@@ -1,15 +1,15 @@
 <ion-header>
   <ion-toolbar >
-    <ion-title style="color:#cc4e4e; text-align: center;">Add a song</ion-title>
+    <ion-title style="color:#cc4e4e; text-align: center;">Update</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="cont">
   <ion-item>
     <ion-label position="floating">Song name</ion-label>
-    <ion-input [(ngModel)]="song" placeholder="Enter a song"></ion-input>
+    <ion-input [(ngModel)]="songN" placeholder="Enter a song"></ion-input>
   </ion-item>
-  <ion-item>
+    <ion-item>
     <ion-label position="floating">Group's name</ion-label>
     <ion-input [(ngModel)]="group" placeholder="Enter the group's name"></ion-input>
   </ion-item>
@@ -26,6 +26,6 @@
     <ion-input [(ngModel)]="duration" type="number" placeholder="Enter the duration (seconds)"></ion-input>
   </ion-item>
   <ion-buttons>
-    <button ion-button class="button" (click)="addSong()"> Add song </button>
+    <button ion-button class="button" (click)="modSong(i)"> Update </button>
   </ion-buttons>
 </ion-content>

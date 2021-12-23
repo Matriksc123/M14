@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-lists',
@@ -6,49 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lists.page.scss'],
 })
 export class ListsPage implements OnInit {
-  songs =  [{"name": "Still waiting",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 251
-              },{"name": "Jessica kill",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 263
-              },{"name": "Walking disaster",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 208
-              },{"name": "Speak of the devil",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 234
-              },{"name": "Dear father",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 241
-              },{"name": "The jester",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 224
-              },{"name": "Ma poubelle",
-                "group": "Sum 41",
-                "album": "Underclass Hero",
-                "genre": "punk/rock",
-                "duration": 271
-            }];
-  constructor() { }
-  
+songs: Object;
+ 
+  constructor(   public _apiService: ApiService,
+                 private router: Router
+    ) { }
+   
   ngOnInit() {
+    this._apiService.getSongs().subscribe((response) => {
+      this.songs = response
+    });
   }
-  remove(i){
-    console.log(i);
-    this.songs.splice(i,1);
+  remove(i) { 
+    i = this.songs[i].id;
+    this._apiService.deleteSong(i).subscribe((response) => {
+      console.log(response);
+    });
+    location.reload();
   }
-
+  goMod(i) {
+    let song = this.songs[i];
+    this._apiService.edit(song);
+    this.router.navigate(['/modifica']);
+  }
+  
 }

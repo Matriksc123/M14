@@ -12,25 +12,24 @@ export class AddPage implements OnInit {
     public _apiService: ApiService
   ) { }
 
-  sName;
-  gName;
-  aName;
+  song;
+  album;
+  group;
   genre;
   duration;
 
   addSong() {
     let data = {
-      sName: this.sName,
-      gName: this.gName,
-      aName: this.aName,
+      song: this.song,
+      album: this.album,
+      group: this.group,
       genre: this.genre,
       duration: this.duration
-      
     }
     this._apiService.addSong(data).subscribe((response) => {
       console.log(response);
   });
-  console.log(data.sName,data.gName,data.aName,data.genre,data.duration)
+  console.log(data.song,data.album,data.group,data.genre,data.duration)
   }
   
   ngOnInit() {

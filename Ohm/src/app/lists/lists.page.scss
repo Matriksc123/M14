@@ -3,14 +3,18 @@ ion-content {
     --ion-background-color:black;
     --ion-text-color: white;
     --offset-bottom: auto!important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
 }
 
 .title {
   font-size: 30px;
   text-align: center;
+}
+button {
+  background-color: #fe0000;
 }
