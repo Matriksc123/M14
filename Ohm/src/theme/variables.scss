@@ -227,10 +227,20 @@
 
     --ion-item-background: #1e1e1e;
 
-    --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-background: #af3b3b;
 
-    --ion-tab-bar-background: #dadada;
+    --ion-tab-bar-background: #a14343;
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.alertB {
+    button.alertButton{
+      color: #b00202;
+    }
+ }
+ 
+ ion-tab-bar{
+  background:transparent;
 }

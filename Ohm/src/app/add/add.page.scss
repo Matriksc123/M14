@@ -1,7 +1,7 @@
 .button {
     position: fixed;
     padding: 10px 20px 10px 20px;
-    margin: 120px 0px 0px 70px;
+    margin: 89px 0px 0px 70px;
     font-size: 20px;
     font-weight: bolder;
     border-radius: 10px;
@@ -9,9 +9,29 @@
     , #b00202);
 }
 .cont ion-item {
-    margin-top: 10px;
     color: #b00202;
 }
 .item-interactive {
     color:black;
 }
+ion-alert {
+ --background: red !important;
+}
+input[type="file"] {
+    position:static;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+.lab {
+    position: fixed;
+    background-color: white;
+    width: 105px;
+    cursor: pointer;
+    padding: 17px 10px 5px 20px;
+    margin-left: -19px;
+    margin-top: 0px;
+    border-radius: 10px;
+
+}
+
+

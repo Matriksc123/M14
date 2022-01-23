@@ -17,7 +17,8 @@ songs: Object;
    
   ngOnInit() {
     this._apiService.getSongs().subscribe((response) => {
-      this.songs = response
+      this.songs = response;
+      console.log(this.songs)
     });
   }
   remove(i) { 

@@ -7,24 +7,30 @@
 <ion-content class="cont">
   <ion-item>
     <ion-label position="floating">Song name</ion-label>
-    <ion-input [(ngModel)]="song" placeholder="Enter a song"></ion-input>
+    <ion-input [(ngModel)]="song" placeholder="Enter a song" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Group's name</ion-label>
-    <ion-input [(ngModel)]="group" placeholder="Enter the group's name"></ion-input>
+    <ion-input [(ngModel)]="group" placeholder="Enter the group's name" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Album's name</ion-label>
-    <ion-input [(ngModel)]="album" placeholder="Enter the album's name"></ion-input>
+    <ion-input [(ngModel)]="album" placeholder="Enter the album's name" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Genre</ion-label>
-    <ion-input [(ngModel)]="genre" placeholder="Enter the genre"></ion-input>
+    <ion-input [(ngModel)]="genre" placeholder="Enter the genre" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Duration</ion-label>
-    <ion-input [(ngModel)]="duration" type="number" placeholder="Enter the duration (seconds)"></ion-input>
+    <ion-input [(ngModel)]="duration" class="mod" type="number" placeholder="Enter the duration (seconds)" required></ion-input>
   </ion-item>
+  <ion-item>
+    <label class="custom-file-upload">
+      <p class="lab">Image</p>
+    <input type="file" id="img" [(ngModel)]="imatge" (change)="selectedFile($event);"/>
+  </label>
+ </ion-item>
   <ion-buttons>
     <button ion-button class="button" (click)="addSong()"> Add song </button>
   </ion-buttons>
