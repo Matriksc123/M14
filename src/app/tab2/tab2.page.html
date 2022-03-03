@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Llistat
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Casa</ion-label>
+    <ion-select placeholder="Select One" (ionChange)="filterHouse()" [(ngModel)]="casaH">
+      <ion-select-option value="Gryffindor">Gryffindor</ion-select-option>
+      <ion-select-option value="Ravenclaw">Ravenclaw</ion-select-option>
+      <ion-select-option value="Hufflepuff">Hufflepuff </ion-select-option>
+      <ion-select-option value="Slytherin">Slytherin  </ion-select-option>
+      <ion-select-option value="sense">Sense especificar </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-list>
+    <div *ngFor="let i of chars;let e=index;">
+      <ion-item-sliding class="cont">
+        <ion-item class="cont">
+          <ion-thumbnail slot="start">
+            <img src="{{i.imagen}}">
+          </ion-thumbnail>
+          <ion-label>
+            <h3>{{i.personaje}}</h3>
+            <p>{{i.casaDeHogwarts}}</p>
+        </ion-label>
+        <ion-badge slot="end">{{i.favs}}</ion-badge>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-button color="danger" class="button" (click)="delete(e)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+          <ion-button color="primary" class="button" (click)="favs(e)"><ion-icon name="star"></ion-icon></ion-button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
+
+</ion-content>

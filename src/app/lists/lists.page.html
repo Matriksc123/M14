@@ -1,0 +1,22 @@
+
+
+<ion-content>
+
+  <div class="cont" *ngFor="let s of songs;let i=index;">
+    <ion-item-sliding class="cont">
+      <ion-item class="cont">
+        <ion-label class="cont">{{s.track.name}} <br> {{s.track.artists.items[0].profile.name}}</ion-label>
+      </ion-item>
+      <ion-item-options class="cont" side="end">
+        <button ion-button (click)="remove(i)">Remove</button>
+        <button ion-button (click)="goMod(i)">Edit</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </div>
+
+  <ion-infinite-scroll threshold="200px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
